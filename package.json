@@ -38,6 +38,9 @@
     ],
     "types": "dist/index.d.ts",
     "publishConfig": {
-        "registry" : "https://npm.pkg.github.com/CaptMoar-toctoc"
+        "registry": "https://npm.pkg.github.com/CaptMoar-toctoc"
+    },
+    "dependencies": {
+        "antd": "^4.21.7"
     }
 }
