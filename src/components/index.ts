@@ -1,1 +1,1 @@
-export { default as Button } from "./atoms/Buttons";
+export {default as Button } from './atoms'
