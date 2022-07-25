@@ -1,6 +1,6 @@
 {
-    "name": "ds",
-    "version": "0.0.0",
+    "name": "@CaptMoar-toctoc/ds",
+    "version": "0.0.1",
     "description": "",
     "scripts": {
         "rollup": "rollup -c"
@@ -36,5 +36,8 @@
     "files": [
         "dist"
     ],
-    "types": "dist/index.d.ts"
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "registry" : "https://npm.pkg.github.com/CaptMoar-toctoc"
+    }
 }
