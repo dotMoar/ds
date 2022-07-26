@@ -2,12 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import postcss from "rollup-plugin-postcss" 
-
-// import external from "rollup-plugin-peer-deps-external";
-// import { terser } from "rollup-plugin-terser";
-// import generateDeclarations from 'rollup-plugin-generate-declarations';
-// import { babel } from "@rollup/plugin-babel";
+import postcss from "rollup-plugin-postcss"
 
 import packageJson from "./package.json";
 
@@ -29,20 +24,12 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig : "./tsconfig.json"}),
+      typescript({ 
+        tsconfig : "./tsconfig.json",
+        exclude: ["**/__tests__", "**/*.test.ts","src/stories/**"]
+      }),
       postcss(),
-      // postcss(),
-      // babel({
-      //   sourceMap: true,
-      //   exclude: ["node_modules/**", "src/stories/**"],
-      //   presets: [["@babel/preset-react", { "runtime": "automatic" }]],
-      // }),
-      // external(),
-      // generateDeclarations(),
-      // resolve(),
-      // terser(),
     ],
-    // external: ['react', 'react-dom', 'bootstrap'],
   },
   {
     input: "dist/esm/types/index.d.ts",
