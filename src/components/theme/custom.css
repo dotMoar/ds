@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+/* Solo para presentación storybook */
+.c-element{
+	padding: 1rem;
+	display: inline-block;
+}

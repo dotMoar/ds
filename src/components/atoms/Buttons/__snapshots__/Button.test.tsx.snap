@@ -6,23 +6,17 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="ant-btn ant-btn-circle ant-btn-dashed"
-        type="button"
+        class=""
       >
-        <span>
-          heeeey
-        </span>
+        heeeey
       </button>
     </div>
   </body>,
   "container": <div>
     <button
-      class="ant-btn ant-btn-circle ant-btn-dashed"
-      type="button"
+      class=""
     >
-      <span>
-        heeeey
-      </span>
+      heeeey
     </button>
   </div>,
   "debug": [Function],

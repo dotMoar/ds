@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss"
+import babel from 'rollup-plugin-babel';
 
 import packageJson from "./package.json";
 
@@ -28,7 +29,19 @@ export default [
         tsconfig : "./tsconfig.json",
         exclude: ["**/__tests__", "**/*.test.ts","src/stories/**"]
       }),
+      babel({
+        // babelrc: false,
+        // plugins: [['import', { libraryName: 'antd', style: true }]],
+        // extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        // exclude: /\**node_modules\**/,
+    }),
       postcss(),
+      {
+            babelrc: false,
+            plugins: [['import', { libraryName: 'antd', style: true }]],
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            exclude: /\**node_modules\**/,
+        }
     ],
   },
   {

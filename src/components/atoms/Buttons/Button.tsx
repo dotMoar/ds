@@ -1,14 +1,60 @@
-import React from "react";
-// import './Button.css'
-import { Button as ButtonAnt} from "antd"
-export interface ButtonProps {
-    label: string;
-}
+import React, { FC } from 'react';
+import { iProps } from './iProps';
 
-const Button = (props: ButtonProps) => {
-    return (<ButtonAnt type="dashed" shape="circle">
-    {props.label}
-  </ButtonAnt>)
+import { Button as ButtonMUI, ThemeProvider } from '@mui/material';
+import theme from '../../theme/theme';
+
+const Button: FC<iProps> = ({
+	children,
+	texto,
+	handlerFn,
+	disabled,
+	customStyleObject,
+	withBoolean
+}) => {
+	return (
+		<>
+			<ThemeProvider theme={theme}>
+
+				<div className='c-element'>
+					<ButtonMUI
+						variant='contained'
+						onClick={handlerFn}
+						disabled={disabled}
+						sx={customStyleObject}
+						fullWidth={withBoolean}
+					>
+						{children}{texto}
+					</ButtonMUI>
+				</div>
+
+				<div className='c-element'>
+					<ButtonMUI
+						variant='contained'
+						onClick={handlerFn}
+						disabled={disabled}
+						sx={customStyleObject}
+						fullWidth={withBoolean}
+						color='secondary'
+					>
+						{children}{texto}
+					</ButtonMUI>
+				</div>
+				<div className='c-element'>
+					<ButtonMUI
+						variant='contained'
+						onClick={handlerFn}
+						disabled={disabled}
+						sx={customStyleObject}
+						fullWidth={withBoolean}
+						color='error'
+					>
+						{children}{texto}
+					</ButtonMUI>
+				</div>	
+			</ThemeProvider>
+		</>
+	);
 }
 
 export default Button;

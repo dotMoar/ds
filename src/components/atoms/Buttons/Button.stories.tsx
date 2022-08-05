@@ -16,10 +16,10 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const TocToc = Template.bind({});
 TocToc.args = {
-  label: 'Button',
-};
-
-export const ClickMe = Template.bind({});
-ClickMe.args = {
-  label: 'Hello TocToc',
+  // children:,
+  handlerFn: () => {console.log(`click`)},
+  texto: `Enviar`,
+  disabled: false,
+  customStyleObject: {},
+  withBoolean: false
 };
