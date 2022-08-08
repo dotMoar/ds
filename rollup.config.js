@@ -29,7 +29,7 @@ export default [
       commonjs(),
       typescript({ 
         tsconfig : "./tsconfig.json",
-        exclude: ["**/__tests__", "**/*.test.ts","src/stories/**"]
+        exclude: ["**/__tests__", "**/*.test.tsx","src/stories/**", "**/__snapshots__"]
       }),
       babel({
         // babelrc: false,
