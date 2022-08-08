@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss"
+import json from '@rollup/plugin-json';
 import babel from 'rollup-plugin-babel';
 
 import packageJson from "./package.json";
@@ -24,6 +25,7 @@ export default [
     ],
     plugins: [
       resolve(),
+      json(),
       commonjs(),
       typescript({ 
         tsconfig : "./tsconfig.json",
