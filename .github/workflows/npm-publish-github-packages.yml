@@ -26,6 +26,11 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
+      - uses: pocket-apps/action-update-version@v1
+        with:
+          files: 'package.json, app.yaml'
+          version-regexp: '\d+.\d+.\d+'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v3
         with:
           node-version: 16.16.0
