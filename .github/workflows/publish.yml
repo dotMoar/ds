@@ -20,6 +20,7 @@ jobs:
     - run: npm test
     - run: npm run rollup
     - run: npm version prerelease --preid=dev --no-git-tag-version
+    - run: ls -la
   # package:
   #   needs: [build]
   #   runs-on: ubuntu-latest
@@ -39,22 +40,22 @@ jobs:
   #         name: ds
   #         path: "*.tgz"
 
-  publish:
-    name: "Publish to GitHub Packages s"
-    needs: [build]
-    runs-on: ubuntu-latest
-    if: github.repository_owner == 'captmoar-toctoc'
-    steps:
-    # - name: Upload
-    #   uses: actions/download-artifact@v2
-    #   with:
-    #       name: ds
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 16.16.0
-        registry-url: https://npm.pkg.github.com/
-        scope: "@captmoar-toctoc"
-    - run: echo "registry=https://npm.pkg.github.com/@captmoar-toctoc" >> .npmrc
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  # publish:
+  #   name: "Publish to GitHub Packages s"
+  #   needs: [build]
+  #   runs-on: ubuntu-latest
+  #   if: github.repository_owner == 'captmoar-toctoc'
+  #   steps:
+  #   # - name: Upload
+  #   #   uses: actions/download-artifact@v2
+  #   #   with:
+  #   #       name: ds
+  #   - uses: actions/setup-node@v2
+  #     with:
+  #       node-version: 16.16.0
+  #       registry-url: https://npm.pkg.github.com/
+  #       scope: "@captmoar-toctoc"
+  #   - run: echo "registry=https://npm.pkg.github.com/@captmoar-toctoc" >> .npmrc
+  #   - run: npm publish
+  #     env:
+  #       NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
