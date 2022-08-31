@@ -24,7 +24,7 @@ const Button: FC<iProps> = ({
 						sx={customStyleObject}
 						fullWidth={withBoolean}
 					>
-						{children}{texto}easac
+						{children}{texto}easac1
 					</ButtonMUI>
 				</div>
 
