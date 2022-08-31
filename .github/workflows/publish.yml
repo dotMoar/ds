@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: 16.16.0
       - run: npm ci
+      - run: npm run rollup
       - run: npm version prerelease --preid=ci-$GITHUB_RUN_ID --no-git-tag-version
       - run: npm pack
       - name: Upload
@@ -40,7 +41,7 @@ jobs:
     name: "Publish to GitHub Packages s"
     needs: [package]
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'aaronpowell'
+    if: github.repository_owner == 'captmoar-toctoc'
     steps:
     - name: Upload
       uses: actions/download-artifact@v2
