@@ -11,5 +11,8 @@ describe('Button Testing Render', () => {
     // test("Render SnapShot", () => {
     //     expect(render(<Button texto='heeeey' handlerFn={() => { }} />)).toMatchSnapshot();
     // })
+    test("hey", () => {
+        expect(true).toBe(true)
+    })
 })
 

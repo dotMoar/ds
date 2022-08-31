@@ -1,27 +1,49 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-    #- run: npm test
-
-name: Node Package
+name: Node.js CI
 
 on:
   push:
-    branches: ['main']
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-jobs:
-  quality:
-    runs-on: ${{ matrix.os }}
+  jobs:
+    build:
+      runs-on: ubuntu-18.04
+      steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.16.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.16.0
+      - run: npm ci
+      # - run: npm run lint
+      - run: npm test
 
-    strategy:
-      matrix:
-        node-versions: ['16.16.0', '16']
-        os: [ ubuntu-latest ]
+  # package:
+  #   needs: [build]
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Use Node.js 14.x
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 14.x
+  
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-versions }}
-      uses: actions/setup-node@v3
-      with:
-        node-versions: ${{ matrix.node-version }}
-    - run: npm ci
+
+# jobs:
+#   quality:
+#     runs-on: ${{ matrix.os }}
+
+#     strategy:
+#       matrix:
+#         node-versions: ['16.16.0', '16']
+#         os: [ ubuntu-latest ]
+
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Use Node.js ${{ matrix.node-versions }}
+#       uses: actions/setup-node@v3
+#       with:
+#         node-versions: ${{ matrix.node-version }}
+#     - run: npm ci
