@@ -35,10 +35,29 @@ jobs:
         with:
           name: ds
           path: "*.tgz"
-  
+
+    publish:
+      name: "Publish to GitHub Packages"
+      needs: [package]
+      runs-on: ubuntu-latest
+      if: github.repository_owner == 'aaronpowell'
+      steps:
+      - name: Upload
+        uses: actions/download-artifact@v2
+        with:
+            name: ds
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.16.10
+          registry-url: https://npm.pkg.github.com/
+          scope: "@captmoar-toctoc"
+      - run: echo "registry=https://npm.pkg.github.com/@captmoar-toctoc" >> .npmrc
+      - run: npm publish $(ls *.tgz)
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
-# jobs:
+#   jobs:
 #   quality:
 #     runs-on: ${{ matrix.os }}
 
