@@ -21,6 +21,7 @@ jobs:
     - run: npm run rollup
     - run: npm version prerelease --preid=dev --no-git-tag-version
     - run: ls -la
+    - run: npm publish
   # package:
   #   needs: [build]
   #   runs-on: ubuntu-latest
