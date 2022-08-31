@@ -18,35 +18,37 @@ jobs:
     - run: npm ci
     # - run: npm run lint
     - run: npm test
-  package:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 16.16.0
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.16.0
-      - run: npm ci
-      - run: npm run rollup
-      - run: npm version prerelease --preid=dev --no-git-tag-version
-      - run: npm pack
-      - name: Upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: ds
-          path: "*.tgz"
+    - run: npm run rollup
+    - run: npm version prerelease --preid=dev --no-git-tag-version
+  # package:
+  #   needs: [build]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Use Node.js 16.16.0
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16.16.0
+  #     - run: npm ci
+  #     - run: npm run rollup
+  #     - run: npm version prerelease --preid=dev --no-git-tag-version
+  #     - run: npm pack
+  #     - name: Upload
+  #       uses: actions/upload-artifact@v2
+  #       with:
+  #         name: ds
+  #         path: "*.tgz"
 
   publish:
     name: "Publish to GitHub Packages s"
-    needs: [package]
+    needs: [build]
     runs-on: ubuntu-latest
     if: github.repository_owner == 'captmoar-toctoc'
     steps:
-    - name: Upload
-      uses: actions/download-artifact@v2
-      with:
-          name: ds
+    # - name: Upload
+    #   uses: actions/download-artifact@v2
+    #   with:
+    #       name: ds
     - uses: actions/setup-node@v2
       with:
         node-version: 16.16.0
@@ -56,21 +58,3 @@ jobs:
     - run: npm publish $(ls *.tgz)
       env:
         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-
-#   jobs:
-#   quality:
-#     runs-on: ${{ matrix.os }}
-
-#     strategy:
-#       matrix:
-#         node-versions: ['16.16.0', '16']
-#         os: [ ubuntu-latest ]
-
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Use Node.js ${{ matrix.node-versions }}
-#       uses: actions/setup-node@v3
-#       with:
-#         node-versions: ${{ matrix.node-version }}
-#     - run: npm ci

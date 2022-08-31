@@ -57,6 +57,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.0",
+    "@captmoar-toctoc/ds": "4.3.3-dev.2",
     "typescript": "^4.7.4"
   },
   "overrides": {
