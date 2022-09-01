@@ -1,6 +1,6 @@
 {
   "name": "@captmoar-toctoc/ds",
-  "version": "4.3.3-dev.1",
+  "version": "4.3.3-dev.2",
   "description": "",
   "scripts": {
     "rollup": "rollup -c",
