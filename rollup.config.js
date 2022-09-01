@@ -7,6 +7,7 @@ import json from '@rollup/plugin-json';
 import babel from 'rollup-plugin-babel';
 
 import packageJson from "./package.json";
+import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
 
 export default [
   {
@@ -27,16 +28,24 @@ export default [
       resolve(),
       json(),
       commonjs(),
+      PeerDepsExternalPlugin(),
       typescript({ 
         tsconfig : "./tsconfig.json",
-        exclude: ["**/__tests__", "**/*.test.tsx","src/stories/**", "**/__snapshots__"]
+        exclude: [
+          "src/stories",
+          "**/*.stories.tsx",
+          "**/__tests__", 
+          "src/stories/**", 
+          "**/__snapshots__"
+        ]
       }),
       babel({
         // babelrc: false,
         // plugins: [['import', { libraryName: 'antd', style: true }]],
         // extensions: ['.js', '.jsx', '.ts', '.tsx'],
         // exclude: /\**node_modules\**/,
-    }),
+    },
+    ),
       postcss(),
       {
             babelrc: false,
@@ -45,9 +54,10 @@ export default [
             exclude: /\**node_modules\**/,
         }
     ],
+    external: ['react', 'react-dom']
   },
   {
-    input: "dist/esm/types/index.d.ts",
+    input: "dist/esm/index.js",
     output: [{file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
     external: [/\.css$/]
