@@ -60041,7 +60041,8 @@ var Button = function (_a) {
             React__default["default"].createElement("div", { className: 'c-element' },
                 React__default["default"].createElement(Button$1, { variant: 'contained', onClick: handlerFn, disabled: disabled, sx: customStyleObject, fullWidth: withBoolean },
                     children,
-                    texto)))));
+                    texto,
+                    " Hola soy un boton")))));
 };
 
 exports.Button = Button;
