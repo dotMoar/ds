@@ -21,8 +21,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{matrix.node-version}}
-    - name: Dependency installs
+    - name: Install semantic release
       run: npm install --save-dev @semantic-release/changelog @semantic-release/git @semantic-release/github
+    - name: Dependency installs
       run: npm ci
     - name: Testing
       run: npm run test
