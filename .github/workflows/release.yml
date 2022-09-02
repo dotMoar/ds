@@ -18,13 +18,15 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup Node.js
       uses: actions/setup-node@v3
+      with:
+        node-version: ${{matrix.node-version}}
     - name: Dependency installs
       run: npm ci
     - name: Testing
       run: npm run test
     - name: rollup compiler
       run: npm run rollup
-      
+
       
 # env:
 #   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
