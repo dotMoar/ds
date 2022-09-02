@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/CaptMoar-toctoc/ds/compare/v1.0.0...v1.0.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* **homepage:** button ([b51ed99](https://github.com/CaptMoar-toctoc/ds/commit/b51ed99c2a7ed88033559e57a9b30e79df8180d2))
+
 # 1.0.0 (2022-09-02)
 
 
