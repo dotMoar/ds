@@ -21,6 +21,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{matrix.node-version}}
+        registry-url: https://npm.pkg.github.com/
+        scope: "@captmoar-toctoc"
     - name: Install semantic release
       run: npm install --save-dev @semantic-release/changelog @semantic-release/git @semantic-release/github
     - name: Dependency installs
