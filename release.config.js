@@ -15,6 +15,10 @@ module.exports = {
           changelogFile: 'CHANGELOG.md'
         }
       ],
+      ["@semantic-release/npm", {
+        "npmPublish": false,
+        "tarballDir": "dist",
+      }],
       '@semantic-release/github',
       [
         '@semantic-release/git',
@@ -22,6 +26,7 @@ module.exports = {
           assets: ['CHANGELOG.md', 'dist/**'],
           message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
         }
-      ]
+      ],
+      
     ]
   }
