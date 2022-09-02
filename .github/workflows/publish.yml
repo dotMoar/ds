@@ -74,8 +74,8 @@ jobs:
         with:
           node-version: 16.16.0
       - run: npm ci
-      - run: npm version prerelease --preid=dev --no-git-tag-version
       - run: npm rollup
+      - run: npm version prerelease --preid=dev --no-git-tag-version
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
