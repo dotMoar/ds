@@ -79,7 +79,7 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: design-system
+          name: package
           path: "*.tgz"
 
   publish:
@@ -94,7 +94,7 @@ jobs:
     - name: Upload
       uses: actions/download-artifact@v2
       with:
-          name: design-system
+          name: package
     - uses: actions/setup-node@v3
       with:
         node-version: 16.16.0
