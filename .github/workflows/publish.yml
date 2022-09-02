@@ -42,6 +42,7 @@ jobs:
         with:
           name: package
           path: "*.tgz"
+      - run: ls -la
 
   publish:
     name: "Publish to GitHub Packages"
@@ -65,4 +66,3 @@ jobs:
     - run: npm publish $(ls *.tgz)
       env:
         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
