@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/CaptMoar-toctoc/ds/compare/v1.0.2...v1.0.3) (2022-09-02)
+
+
+### Bug Fixes
+
+* **homepage:** fix npm again ([433acd4](https://github.com/CaptMoar-toctoc/ds/commit/433acd45a5094097b20f9fa589a1a3736b9e1304))
+
 ## [1.0.2](https://github.com/CaptMoar-toctoc/ds/compare/v1.0.1...v1.0.2) (2022-09-02)
 
 
