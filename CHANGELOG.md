@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.0...v1.1.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* **homepage:** a publicar 2u ([07c2988](https://github.com/CaptMoar-toctoc/ds/commit/07c298872dc913bf523a59ae44b91976c801f703))
+
 # [1.1.0](https://github.com/CaptMoar-toctoc/ds/compare/v1.0.5...v1.1.0) (2022-09-02)
 
 
