@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/CaptMoar-toctoc/ds/compare/v1.0.5...v1.1.0) (2022-09-02)
+
+
+### Features
+
+* **homepage:** a publicar papu ([d7dab10](https://github.com/CaptMoar-toctoc/ds/commit/d7dab100a47d683de2cf4f1de1b824534b6676e6))
+* **homepage:** a publicar papu ([5844a48](https://github.com/CaptMoar-toctoc/ds/commit/5844a488cebbdeda5886049492723dd862b1b645))
+
 ## [1.0.5](https://github.com/CaptMoar-toctoc/ds/compare/v1.0.4...v1.0.5) (2022-09-02)
 
 
