@@ -1,6 +1,45 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
 
+# name: Node.js Package
+
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: 16.16.0
+#       - run: npm ci
+#       - run: npm test
+
+#   publish-gpr:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       packages: write
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: 16.16.0
+#           registry-url: https://npm.pkg.github.com/
+#       - run: npm version prerelease --preid=dev --no-git-tag-version
+#       - run: npm ci
+#       - run: npm run rollup
+#       - run: npm publish
+#         env:
+#           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
 name: Node.js Package
 
 on:
@@ -9,90 +48,62 @@ on:
   pull_request:
     branches: [ main ]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Validando Node 16.16.0 
+        uses: actions/setup-node@v3
         with:
           node-version: 16.16.0
       - run: npm ci
+      # - run: npm run lint
       - run: npm test
+      - run: npm run rollup
+      - run: npm version prerelease --preid=dev --no-git-tag-version
+      - run: ls -la
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
+    package:
+      needs: [build]
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Use Node.js 14.x
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16.16.0
+        - run: npm ci
+        - run: npm version prerelease --preid=dev --no-git-tag-version
+        - run: npm rollup
+        - name: Upload
+          uses: actions/upload-artifact@v2
+          with:
+            name: design-system
+            path: "*.tgz"
+
+    publish:
+      name: "Publish to GitHub Packages"
+      needs: [package]
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        packages: write
+      if: github.repository_owner == 'captmoar-toctoc'
+      steps:
+      - name: Upload
+        uses: actions/download-artifact@v2
+        with:
+            name: design-system
       - uses: actions/setup-node@v3
         with:
           node-version: 16.16.0
           registry-url: https://npm.pkg.github.com/
-      - run: npm version prerelease --preid=dev --no-git-tag-version
-      - run: npm ci
-      - run: npm run rollup
-      - run: npm publish
+          scope: "@captmoar-toctoc"
+      - run: echo "registry=https://npm.pkg.github.com/@captmoar-toctoc" >> .npmrc
+      - run: npm publish $(ls *.tgz)
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-
-# name: Node.js CI
-
-
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     permissions:
-#        contents: read
-#        packages: write
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Use Node.js 16.16.0
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: 16.16.0
-#     - run: npm ci
-#     # - run: npm run lint
-#     - run: npm test
-#     - run: npm run rollup
-#     - run: npm version prerelease --preid=dev --no-git-tag-version
-#     - run: ls -la
-#     - uses: actions/setup-node@v2
-#       with:
-#         node-version: 16.16.0
-#         registry-url: https://npm.pkg.github.com/
-#         scope: "@captmoar-toctoc"
-#         username: ${{ github.actor }}
-#     - run: echo "registry=https://npm.pkg.github.com/@captmoar-toctoc" >> .npmrc
-#     - run: cat .npmrc
-#     - run: npm publish
-#       env:
-#         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-  # package:
-  #   needs: [build]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Use Node.js 16.16.0
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16.16.0
-  #     - run: npm ci
-  #     - run: npm run rollup
-  #     - run: npm version prerelease --preid=dev --no-git-tag-version
-  #     - run: npm pack
-  #     - name: Upload
-  #       uses: actions/upload-artifact@v2
-  #       with:
-  #         name: ds
-  #         path: "*.tgz"
-
   # publish:
   #   name: "Publish to GitHub Packages s"
   #   needs: [build]
