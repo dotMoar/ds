@@ -27,31 +27,6 @@ const Button: FC<iProps> = ({
 						{children}{texto}
 					</ButtonMUI>
 				</div>
-
-				<div className='c-element'>
-					<ButtonMUI
-						variant='contained'
-						onClick={handlerFn}
-						disabled={disabled}
-						sx={customStyleObject}
-						fullWidth={withBoolean}
-						color='secondary'
-					>
-						{children}{texto}
-					</ButtonMUI>
-				</div>
-				<div className='c-element'>
-					<ButtonMUI
-						variant='contained'
-						onClick={handlerFn}
-						disabled={disabled}
-						sx={customStyleObject}
-						fullWidth={withBoolean}
-						color='error'
-					>
-						{children}{texto}
-					</ButtonMUI>
-				</div>	
 			</ThemeProvider>
 		</>
 	);
