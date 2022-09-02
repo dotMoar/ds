@@ -35,7 +35,7 @@ jobs:
           node-version: 16.16.0
       - run: npm ci
       - run: npm run rollup
-      - run: npm version prerelease --preid=dev --no-git-tag-version
+      - run: npm version prerelease --preid=dev-$GITHUB_RUN_NUMBER --no-git-tag-version
       - run: cat package.json | grep version
       - run: npm pack
       - name: Upload
