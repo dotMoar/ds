@@ -37,6 +37,7 @@ jobs:
       - run: npm run rollup
       - run: npm pack
       - run: npm version prerelease --preid=dev --no-git-tag-version
+      - run: cat package.json | grep version
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
