@@ -1,10 +1,11 @@
 module.exports = {
     branches: [
-      'main',
       {
-        name: 'beta',
+        name: 'main',
         prerelease: true
-      }
+      },
+      staging,
+      prod
     ],
     plugins: [
       '@semantic-release/commit-analyzer',
@@ -16,8 +17,7 @@ module.exports = {
         }
       ],
       ["@semantic-release/npm", {
-        "npmPublish": false,
-        "tarballDir": "dist",
+        "npmPublish": false
       }],
       '@semantic-release/github',
       [
