@@ -1,3 +1,14 @@
+## [1.1.3](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.2...v1.1.3) (2022-09-05)
+
+
+### Bug Fixes
+
+* **commitlint:** se eliminan ramas que no existen ([b148c29](https://github.com/CaptMoar-toctoc/ds/commit/b148c291a462d6224651913d20c675f5ce0116ab))
+* **commitlint:** se eliminan ramas que no existen 2 ([f9f1559](https://github.com/CaptMoar-toctoc/ds/commit/f9f1559dfaf7bb9abdb3ef7486240ecdedb19335))
+* **Commit:** Modificacion de campos ([b550e59](https://github.com/CaptMoar-toctoc/ds/commit/b550e59601512b9410d8ff641396883db5f4be8f))
+* **husky:** se agrega magic triks 3 ([259eab1](https://github.com/CaptMoar-toctoc/ds/commit/259eab132642478352bd75f62fea8084d01c7074))
+* **husky:** se arregla ejecucion de husky 2222 ([377f572](https://github.com/CaptMoar-toctoc/ds/commit/377f5721cddcb37418fe0fc31f7d79273c555ac7))
+
 ## [1.1.2](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.1...v1.1.2) (2022-09-02)
 
 
