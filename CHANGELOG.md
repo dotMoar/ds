@@ -1,4 +1,13 @@
-## [1.1.4](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.3...v1.1.4) (2022-09-05)
+
+## [1.1.4-beta.2](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.4-beta.1...v1.1.4-beta.2) (2022-09-05)
+
+
+### Bug Fixes
+
+* **beta:** se quita el log ([21d7c04](https://github.com/CaptMoar-toctoc/ds/commit/21d7c04784f68868215fc25b74e13c5a7ec81882))
+
+## [1.1.4-beta.1](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.3...v1.1.4-beta.1) (2022-09-05)
+
 
 
 ### Bug Fixes
