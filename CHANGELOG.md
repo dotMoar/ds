@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/CaptMoar-toctoc/ds/compare/v1.2.0...v1.3.0) (2022-09-06)
+
+
+### Features
+
+* **git:** esto es el merge ([#5](https://github.com/CaptMoar-toctoc/ds/issues/5)) ([0330358](https://github.com/CaptMoar-toctoc/ds/commit/0330358950e023cf7ad5ac510cf2499a03353e47))
+
 # [1.2.0](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.6...v1.2.0) (2022-09-06)
 
 

@@ -60040,6 +60040,7 @@ var Button = function (_a) {
         React__default["default"].createElement(ThemeProvider, { theme: theme },
             React__default["default"].createElement("div", { className: 'c-element' },
                 React__default["default"].createElement(Button$1, { variant: 'contained', onClick: handlerFn, disabled: disabled, sx: customStyleObject, fullWidth: withBoolean },
+                    "sad adsasd",
                     children,
                     texto,
                     " Hola soy un boton en otra rama oye mas texto cambio aca")))));
