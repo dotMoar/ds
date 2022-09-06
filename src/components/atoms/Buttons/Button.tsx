@@ -25,6 +25,7 @@ const Button: FC<iProps> = ({
 						fullWidth={withBoolean}
 					>
 						{children}{texto} Hola soy un boton en otra rama
+						oye mas texto
 					</ButtonMUI>
 				</div>
 			</ThemeProvider>
