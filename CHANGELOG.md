@@ -1,3 +1,11 @@
+## [1.1.6](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.5...v1.1.6) (2022-09-06)
+
+
+### Bug Fixes
+
+* **testing:** se agrega una rama ([9870774](https://github.com/CaptMoar-toctoc/ds/commit/987077479b8a3f64eac2ed948326efa716203e53))
+* **testing:** se agrego otro texto a la rama ([a909adb](https://github.com/CaptMoar-toctoc/ds/commit/a909adb51b49d2bb783c27a173276ba9038f24d7))
+
 ## [1.1.5](https://github.com/CaptMoar-toctoc/ds/compare/v1.1.4...v1.1.5) (2022-09-05)
 
 
