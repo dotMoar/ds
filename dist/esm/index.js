@@ -60015,7 +60015,7 @@ var Button = function (_a) {
                 React__default.createElement(Button$1, { variant: 'contained', onClick: handlerFn, disabled: disabled, sx: customStyleObject, fullWidth: withBoolean },
                     children,
                     texto,
-                    " Hola soy un boton en otra rama oye mas texto")))));
+                    " Hola soy un boton en otra rama oye mas texto cambio aca")))));
 };
 
 export { Button };
