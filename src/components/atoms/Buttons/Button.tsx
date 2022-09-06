@@ -24,7 +24,7 @@ const Button: FC<iProps> = ({
 						sx={customStyleObject}
 						fullWidth={withBoolean}
 					>
-						{children}{texto} Hola soy un boton
+						{children}{texto} Hola soy un boton en otra rama
 					</ButtonMUI>
 				</div>
 			</ThemeProvider>
