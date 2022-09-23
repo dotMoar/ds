@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/CaptMoar-toctoc/ds/compare/v1.3.0...v1.4.0) (2022-09-23)
+
+
+### Features
+
+* **ofuscacion:** test ofuscacion ([12d4107](https://github.com/CaptMoar-toctoc/ds/commit/12d4107d17efc0af13df3f3cfbefea25ed6ce600))
+
 # [1.3.0](https://github.com/CaptMoar-toctoc/ds/compare/v1.2.0...v1.3.0) (2022-09-06)
 
 
