@@ -16,7 +16,7 @@ const Button: FC<iProps> = ({
 		<>
 			<ThemeProvider theme={theme}>
 
-				<div className='c-element'>
+				<div className='c-element esto-es-un-class'>
 					<ButtonMUI
 						variant='contained'
 						onClick={handlerFn}

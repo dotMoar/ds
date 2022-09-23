@@ -1,7 +1,3 @@
-import * as React from 'react';
-
-declare function Button(_a: any): React.FunctionComponentElement<{
-    children?: React.ReactNode;
-}>;
+declare function Button(_0x2c2c4f: any): any;
 
 export { Button };

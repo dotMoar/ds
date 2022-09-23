@@ -8,6 +8,7 @@ import babel from 'rollup-plugin-babel';
 
 import packageJson from "./package.json";
 import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
+import { obfuscator } from 'rollup-obfuscator';
 
 export default [
   {
@@ -27,6 +28,7 @@ export default [
     plugins: [
       resolve(),
       json(),
+      obfuscator(),
       commonjs(),
       PeerDepsExternalPlugin(),
       typescript({ 
